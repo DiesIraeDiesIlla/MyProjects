@@ -1,4 +1,4 @@
-from PIL import Image
+ from PIL import Image
 from PIL import ImageChops
 import math
 
@@ -19,15 +19,19 @@ sum_of_squares = sum(sq)
 rms = math.sqrt(sum_of_squares/float(img1.size[0] * img1.size[1]))
  
 
-while width1==width2 & height1==height2:
-    if rms==0:
-        print("Images are the same rms=",rms)
-        print(img1)
-    elif rms>90 & rms<100:
-        print("Images are similar rms=",rms)
-        print(img1,img2)
+if width1==width2:
+    if height1==height2:
+        if rms == 0:
+            print("Images are the same rms=",rms)
+            img1.show
+            img2.show
+            
+else:
+    print("Images are not the same rms=",rms) 
+    img1.show
+    img2.show
+     
+ 
 
-if width1!=width2 & height1!=height2:
-    print("Images are not the same rms=",rms)
  
- 
+    
